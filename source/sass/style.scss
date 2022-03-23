@@ -7,7 +7,6 @@
 // ---------------------------------
 
 @import "variables";
-@import "mixins";
 @import "global/fonts";
 @import "global/reboot";
 @import "global/visually-hidden.scss";
@@ -15,7 +14,18 @@
 // Blocks
 // ---------------------------------
 
-
+@import "blocks/container.scss";
+@import "blocks/header.scss";
+@import "blocks/promo.scss";
+@import "blocks/page.scss";
+@import "blocks/footer.scss";
+@import "blocks/social.scss";
+@import "blocks/travel.scss";
+@import "blocks/advantages.scss";
+@import "blocks/cards.scss";
+@import "blocks/booking.scss";
+@import "blocks/form.scss";
+@import "blocks/contacts.scss";
 
 // ---------------------------------
 

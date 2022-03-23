@@ -1,0 +1,32 @@
+.social {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 20px 33px;
+  padding-left: 30px;
+  max-width: 400px;
+  fill: $color-alice-blue;
+
+  @media (max-width: $tablet) {
+    gap: 20px 18px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-left: 0;
+    gap: 20px 20px;
+  }
+}
+
+.social svg {
+  fill: $color-alice-blue;
+
+  @media (max-width: $tablet) {
+    transform: scale(0.8);
+  }
+
+  &:hover {
+    fill: $color-quartz;
+  }
+}

@@ -1,46 +1,80 @@
-import {iosVhFix} from './utils/ios-vh-fix';
-import {initModals} from './modules/modals/init-modals';
+const Message = {
+  OPEN: 'Открыть меню',
+  CLOSE: 'Закрыть меню',
+};
 
-// ---------------------------------
+const navElement = document.querySelector('.header__navigation');
+const toggleElement = document.querySelector('.header__toggle');
+const pageElement = document.querySelector('.page');
+const pageMainElement = document.querySelector('.page__main');
+const mapContainerElement = document.querySelector('#map');
 
-window.addEventListener('DOMContentLoaded', () => {
+if (navElement) {
+  navElement.classList.remove('header__navigation--without-js');
+}
 
-  // Utils
-  // ---------------------------------
+if (pageMainElement) {
+  pageMainElement.classList.remove('page__main--without-js');
+}
 
-  iosVhFix();
+const closeMenu = () => {
+  toggleElement.classList.remove('header__toggle--opened');
+  toggleElement.classList.add('header__toggle--closed');
+  toggleElement.setAttribute('aria-label', Message.OPEN);
+  navElement.classList.remove('header__navigation--opened');
+  pageElement.classList.remove('page--fixed');
+};
 
-  // Modules
-  // ---------------------------------
+const openMenu = () => {
+  toggleElement.classList.remove('header__toggle--closed');
+  toggleElement.classList.add('header__toggle--opened');
+  toggleElement.setAttribute('aria-label', Message.CLOSE);
+  navElement.classList.add('header__navigation--opened');
+  pageElement.classList.add('page--fixed');
+};
 
-  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
-  // в load следует добавить скрипты, не участвующие в работе первого экрана
-  window.addEventListener('load', () => {
-    initModals();
-  });
+document.addEventListener('click', (evt) => {
+  if (!evt.target.closest('.header__navigation') || evt.target.closest('.header__navigation a[href]')) {
+    closeMenu();
+  }
 });
 
-// ---------------------------------
+if (toggleElement) {
+  toggleElement.addEventListener('click', () => {
+    if (toggleElement.classList.contains('header__toggle--closed')) {
+      openMenu();
 
-// ❗❗❗ обязательно установите плагины eslint, stylelint, editorconfig в редактор кода.
+      return;
+    }
+    closeMenu();
+  });
+}
 
-// привязывайте js не на классы, а на дата атрибуты (data-validate)
+/* eslint-disable */
 
-// вместо модификаторов .block--active используем утилитарные классы
-// .is-active || .is-open || .is-invalid и прочие (обязателен нейминг в два слова)
-// .select.select--opened ❌ ---> [data-select].is-open ✔️
+if (mapContainerElement) {
+  ymaps.ready(init);
 
-// выносим все в дата атрибуты
-// url до иконок пинов карты, настройки автопрокрутки слайдера, url к json и т.д.
+  function init() {
+    const myMap = new ymaps.Map('map', {
+      center: [59.93743985077966,30.322603015868893],
+      zoom: 16,
+      controls: [],
+    });
 
-// для адаптивного JS используейтся matchMedia и addListener
-// const breakpoint = window.matchMedia(`(min-width:1024px)`);
-// const breakpointChecker = () => {
-//   if (breakpoint.matches) {
-//   } else {
-//   }
-// };
-// breakpoint.addListener(breakpointChecker);
-// breakpointChecker();
+    const myPlacemark = new ymaps.Placemark(
+      myMap.getCenter(),
+      {},
+      {
+      iconLayout: 'default#image',
+      iconImageHref: './img/svg/pin.svg',
+      iconImageSize: [18, 22],
+      iconImageOffset: [-9, -22],
+        }
+      );
 
-// используйте .closest(el)
+    myMap.geoObjects.add(myPlacemark);
+  }
+}
+
+/* eslint-enable */

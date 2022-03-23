@@ -1,0 +1,131 @@
+.advantages {
+  background-image: url("../img/back-desktop@1x.jpg");
+  background-color: $color-default-background;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 110px;
+  padding-bottom: 120px;
+  min-height: 562px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/back-desktop@2x.jpg");
+  }
+
+  @media (max-width: $tablet) {
+    background-image: url("../img/back-tablet@1x.jpg");
+    min-height: 588px;
+    padding-top: 90px;
+    padding-bottom: 100px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/back-tablet@2x.jpg");
+    }
+  }
+
+  @media (max-width: $mobile) {
+    background-image: url("../img/back-mobile@1x.jpg");
+    min-height: 400px;
+    padding-top: 57px;
+    padding-bottom: 67px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/back-mobile@2x.jpg");
+    }
+  }
+}
+
+.advantages h2 {
+  color: $color-tangaroa;
+  font-family: $ff-default;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 49px;
+
+  @media (max-width: $tablet) {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 30px;
+  }
+}
+
+.advantages ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 40px 40px;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: $tablet) {
+    gap: 30px 30px;
+  }
+}
+
+.advantages li {
+  width: 360px;
+  min-height: 241px;
+  background-color: $color-alice-blue;
+  padding: 30px 30px 10px 30px;
+
+  @media (max-width: $tablet) {
+    width: 206px;
+    min-height: 310px;
+    padding: 22px 15px 0 20px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 290px;
+    min-height: 249px;
+  }
+}
+
+.advantages h3 {
+  color: $color-tangaroa;
+  font-family: $ff-default;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  @media (max-width: $tablet) {
+    line-height: 25px;
+    margin-bottom: 9px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 8px;
+    padding-right: 40px;
+  }
+}
+
+.advantages p {
+  color: $color-tangaroa;
+  font-family: $ff-default;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 0;
+  word-wrap: break-word;
+}
+
+.advantages svg {
+  margin-bottom: 12px;
+  height: 32px;
+
+  @media (max-width: $tablet) {
+    transform: scale(0.82);
+    margin-left: -3px;
+    margin-bottom: 10px;
+  }
+}
