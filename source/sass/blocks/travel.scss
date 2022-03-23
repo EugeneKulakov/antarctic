@@ -24,10 +24,9 @@
   }
 }
 
-.travel img {
+.travel__img {
   width: 48.22%;
   height: 301px;
-  object-fit: cover;
 
   @media (max-width: $tablet) {
     width: 324px;
@@ -40,6 +39,10 @@
     height: 186px;
     object-position: -33px 0;
   }
+}
+
+.travel__img img {
+  object-fit: cover;
 }
 
 .travel__wrap {

@@ -117,6 +117,7 @@
 .cards__wrap {
   grid-row: 1 / -1;
   grid-column: 1 / -1;
+  background-color: $color-default-background;
 }
 
 .cards__item:hover .cards__content {

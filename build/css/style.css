@@ -719,9 +719,12 @@ img {
   flex-wrap: wrap;
 }
 
-.travel img {
+.travel__img {
   width: 48.22%;
   height: 301px;
+}
+
+.travel__img img {
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -911,6 +914,7 @@ img {
 .cards__wrap {
   grid-row: 1 / -1;
   grid-column: 1 / -1;
+  background-color: #2e80cb;
 }
 
 .cards__item:hover .cards__content {
@@ -1390,7 +1394,7 @@ img {
     padding-bottom: 77px;
   }
 
-  .travel img {
+  .travel__img {
     width: 324px;
     height: 264px;
     -o-object-position: -62px 0;
@@ -1668,7 +1672,9 @@ img {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 26px 24px;
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .header__navigation--without-js .header__logo {
@@ -1757,7 +1763,7 @@ img {
     flex-direction: column;
   }
 
-  .travel img {
+  .travel__img {
     width: 290px;
     height: 186px;
     -o-object-position: -33px 0;
