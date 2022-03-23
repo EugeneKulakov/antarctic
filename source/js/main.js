@@ -17,7 +17,7 @@ if (pageMainElement) {
   pageMainElement.classList.remove('page__main--without-js');
 }
 
-const closeMenu = () => {
+const getMenuClosed = () => {
   toggleElement.classList.remove('header__toggle--opened');
   toggleElement.classList.add('header__toggle--closed');
   toggleElement.setAttribute('aria-label', Message.OPEN);
@@ -25,7 +25,7 @@ const closeMenu = () => {
   pageElement.classList.remove('page--fixed');
 };
 
-const openMenu = () => {
+const getMenuOpened = () => {
   toggleElement.classList.remove('header__toggle--closed');
   toggleElement.classList.add('header__toggle--opened');
   toggleElement.setAttribute('aria-label', Message.CLOSE);
@@ -35,18 +35,18 @@ const openMenu = () => {
 
 document.addEventListener('click', (evt) => {
   if (!evt.target.closest('.header__navigation') || evt.target.closest('.header__navigation a[href]')) {
-    closeMenu();
+    getMenuClosed();
   }
 });
 
 if (toggleElement) {
   toggleElement.addEventListener('click', () => {
     if (toggleElement.classList.contains('header__toggle--closed')) {
-      openMenu();
+      getMenuOpened();
 
       return;
     }
-    closeMenu();
+    getMenuClosed();
   });
 }
 
