@@ -27,6 +27,7 @@
 .travel__img {
   width: 48.22%;
   height: 301px;
+  background-color: $color-default-background;
 
   @media (max-width: $tablet) {
     width: 324px;
@@ -43,6 +44,7 @@
 
 .travel__img img {
   object-fit: cover;
+  height: 100%;
 }
 
 .travel__wrap {
